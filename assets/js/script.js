@@ -1,8 +1,9 @@
 // Functions
-function buildQuiz(){   
+(function(){
+    function startQuiz(){   
     const output = [];
   
-    myQuestions.forEach(
+    quizQuestions.forEach(
       (currentQuestion, questionNumber) => {
   
         const answers = [];
@@ -32,7 +33,7 @@ function showResults(){
 
   let numCorrect = 0;
 
-  myQuestions.forEach( (currentQuestion, questionNumber) => {
+  quizQuestions.forEach( (currentQuestion, questionNumber) => {
 
     const answerContainer = answerContainers[questionNumber];
     const selector = `input[name=question${questionNumber}]:checked`;
@@ -51,9 +52,9 @@ function showResults(){
 }
 
 // Variables
-var quizContainer = document.getElementById('quiz');
-var resultsContainer = document.getElementById('results');
-var submitButton = document.getElementById('submit')
+var quizContainer = document.getElementById("quiz");
+var resultsContainer = document.getElementById("results");
+var submitButton = document.getElementById("submit")
 var quizQuestions = [
     //    first questions
         {
@@ -62,53 +63,53 @@ var quizQuestions = [
             a: "Douglas Crokford",
             b: "Sheryl Sandberg",
             c: "Brendan Eich",
-            d: "Robert Deckard",
+            d: "Robert Deckard"
         },
         correctAnswer: "c"
     },
     // second question
     {
-        question: "Inside which HTML element do we put the JavaScript?",
-        answers: {
-            a: "<script>",
-            b: "<scripting>",
-            c: "<javascript>",
-            d: "<js>",
+            question: "Inside which HTML element do we put the JavaScript?",
+            answers: {
+                a: "<script>",
+                b: "<scripting>",
+                c: "<javascript>",
+                d: "<js>"
         },
-        correctAnswer: "a"
+            correctAnswer: "a"
     },
     // third question
     {
-        question: "How do you write 'Hello World' in an alert box?",
-        answers: {
-            a: "msg('Hello World');",
-            b: "alertBox('Hello World);",
-            c: "alert('Hello World')",
-            d: "msgBox('Hellow World');",
+            question: "How do you write 'Hello World' in an alert box?",
+            answers: {
+                a: "msg('Hello World');",
+                b: "alertBox('Hello World);",
+                c: "alert('Hello World')",
+                d: "msgBox('Hellow World');"
         },
-        correctAnswer: "c"
+            correctAnswer: "c"
     },
     // fourth question
     {
-        question: "Which event occurs when the user clicks on an HTML element?",
-        answers: {
-            a: "onchange",
-            b: "onclick",
-            c: "onmouseclick",
-            d: "onmouseover",
+            question: "Which event occurs when the user clicks on an HTML element?",
+            answers: {
+                a: "onchange",
+                b: "onclick",
+                c: "onmouseclick",
+                d: "onmouseover"
         },
-        correctAnswer: "b"
+            correctAnswer: "b"
     },
     // fith question
     {
-        question: "What is the correct way to write a JavaScript array?",
-        answers: {
-            a: "var colors = 1 =('red'), 2 = ('green'), 3 = ('blue')",
-            b: "var colors = 'red','green','blue'",
-            c: "var colors = (1:'red',2:'green',3:'blue'",
-            d: "var colors = ['red', 'green', 'blue'",
+            question: "What is the correct way to write a JavaScript array?",
+            answers: {
+                a: "var colors = 1 =('red'), 2 = ('green'), 3 = ('blue')",
+                b: "var colors = 'red','green','blue'",
+                c: "var colors = (1:'red',2:'green',3:'blue'",
+                d: "var colors = ['red', 'green', 'blue'"
         },
-        correctAnswer: "d"
+            correctAnswer: "d"
     }
  ];
 
@@ -117,4 +118,4 @@ startQuiz();
 
 // Event Listenrs
 submitButton.addEventListener('click', showResults)
-
+})();
